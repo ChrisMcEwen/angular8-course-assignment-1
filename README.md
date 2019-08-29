@@ -1,27 +1,19 @@
-# MyFirstApp
+# Angular 8 Course - Assignment 1 Solution
+My solution to Assignment 1 from https://www.udemy.com/the-complete-guide-to-angular-2/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+I made the components without using ```ng generate component NewComponent``` / ```ng g c NewComponent```
 
-## Development server
+### Steps
+- Created new folders for the **SuccessAlert** and **WarningAlert** components and added .TS files for each
+- Inside those .TS files I wrote:
+- ```export class ClassName {}``` at the bottom
+- ```import { Component } from '@angular/core';``` at the top
+- ```@Component ({ selector: 'ElementSelector', template: `<div>stuff</div>` })``` as the meat in the sandwich (for styling, I used Bootstrap3 alert styles ```alert success-alert``` and ```alert danger-alert``` on the divs to get green and red stylish alerts
+- Added these two lines to **app.module.ts**
+```
+import { SuccessAlert } from './SuccessAlert/success-alert-component';
+import { WarningAlert } from './WarningAlert/warning-alert-component';
+```
+- Added **SuccessAlert** and **WarningAlert** to the ```declarations: ``` in **app.module.ts**
+- Added the new components to **app.component.html** using the ```<SuccessAlert></SuccessAlert>``` and ```<WarningAlert</WarningAlert>``` element selectors
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
